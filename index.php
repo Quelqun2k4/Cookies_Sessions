@@ -8,8 +8,7 @@ if (!isset($_SESSION['loginname'])) {
 if(!empty($_GET['add_to_cart'])) {
     if(empty($_SESSION['cart'][$_GET['add_to_cart']])){
         $id = $_GET['add_to_cart'];
-        $_SESSION['cart'][$id] = 1 ;
-        exit();
+        $_SESSION['cart'][$id] = 1;
     }
     else {
        $id = $_GET['add_to_cart'];
@@ -17,8 +16,6 @@ if(!empty($_GET['add_to_cart'])) {
        $_SESSION['cart'][$id] = $quantity + 1;
     }
 }
-
-echo $id
 ?>
 <?php require 'inc/head.php'; ?>
 <section class="cookies container-fluid">
