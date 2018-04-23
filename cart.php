@@ -15,9 +15,11 @@ $articles = [ 46 => 'Pecan nuts', 36 => 'Chocolate chips', 58 =>'Chocolate cooki
                     <th>Image</th>
                     <th>Article</th>
                     <th>Quantity</th>
-                    <th>Supprimer</th>
                 </tr>
-                <?php foreach($_SESSION['cart'] as $id => $quantity) { ?>
+                <?php if(empty($_SESSION['cart'])) { echo "Votre panier est vide";}
+                else
+                    foreach($_SESSION['cart'] as $id => $quantity) { ?>
+                        <?php var_dump($_SESSION['cart']) ?>
                     <tr>
                         <td><img src="assets/img/product-<?= $id ?>.jpg" alt=<?= $articles[$id] ?> class="img-responsive" style="height: 200px;"></td>
                         <td><?= $articles[$id] ?></td>

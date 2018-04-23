@@ -3,7 +3,6 @@ session_start();
 if (!empty($_POST['loginname']) && !isset($_SESSION['loginname'])) {
     $_SESSION['loginname'] = $_POST['loginname'];
     header('Location: index.php');
-    exit();
 }
 elseif (isset($_SESSION['loginname'])) {
     header('Location: index.php');
